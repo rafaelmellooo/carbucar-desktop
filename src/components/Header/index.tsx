@@ -2,6 +2,8 @@ import React, { useCallback } from 'react'
 import { remote } from 'electron'
 import { FiMinus, FiSquare, FiX } from 'react-icons/fi'
 
+import AddProduct from '../AddProduct'
+
 import { Container, Actions, Icon } from './styles'
 
 const Header: React.FC = () => {
@@ -29,6 +31,7 @@ const Header: React.FC = () => {
 
   return (
     <Container>
+      <AddProduct />
       <Actions>
         <Icon type="button" onClick={minimizeWindow}>
           <FiMinus />

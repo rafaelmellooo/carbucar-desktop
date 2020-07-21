@@ -4,17 +4,17 @@ export const Container = styled.header`
   width: 100%;
   height: 40px;
 
-  position: relative;
-
-  border-bottom: thin solid black;
+  background-color: #fafafa;
 
   -webkit-user-select: none;
   -webkit-app-region: drag;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 `
 
 export const Actions = styled.div`
-  position: absolute;
-
   width: 100%;
   height: 100%;
 

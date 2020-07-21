@@ -7,10 +7,4 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     outline: none;
   }
-
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    color: #E1E1E6;
-  }
 `
