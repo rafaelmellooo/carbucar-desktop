@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { render } from 'react-dom'
 import Modal from 'react-modal'
+import { ToastProvider } from 'react-toast-notifications'
+
+import { ProductProvider } from './contexts/products'
 
 import { GlobalStyle } from './styles/GlobalStyle'
 import Header from './components/Header'
 import styled from 'styled-components'
-
-import api from './services/api'
 
 import Search from './components/Search'
 
@@ -24,44 +25,22 @@ interface Product {
   image_url: string
 }
 
-interface AxiosResponse {
-  items: Product[]
-  meta: {
-    totalItems: number
-    itemCount: number
-    itemsPerPage: number
-    totalPages: number
-    currentPage: number
-  }
-}
-
-const App = () => {
-  const [products, setProducts] = useState<Product[]>([])
-
-  const loadProducts = async () => {
-    const response = await api.get<AxiosResponse>('/products')
-
-    setProducts(response.data.items)
-  }
-
-  useEffect(() => {
-    loadProducts()
-  }, [])
-
-  return (
-    <>
-      <GlobalStyle />
-      <Header />
-      <Container>
-        <Search />
-        <Products products={products} />
-      </Container>
-    </>
-  )
-}
+const App = () => (
+  <>
+    <GlobalStyle />
+    <ToastProvider>
+      <ProductProvider>
+        <Header />
+        <Container>
+          <Search />
+          <Products />
+        </Container>
+      </ProductProvider>
+    </ToastProvider>
+  </>
+)
 
 const Container = styled.main`
-  padding: 20px;
 `
 
 Modal.setAppElement('#root')

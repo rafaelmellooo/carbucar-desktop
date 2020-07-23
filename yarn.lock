@@ -1177,7 +1177,7 @@
     "@emotion/utils" "0.11.3"
     "@emotion/weak-memoize" "0.2.5"
 
-"@emotion/core@^10.0.9":
+"@emotion/core@^10.0.14", "@emotion/core@^10.0.9":
   version "10.0.28"
   resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.28.tgz#bb65af7262a234593a9e952c041d0f1c9b9bef3d"
   integrity sha512-pH8UueKYO5jgg0Iq+AmCLxBsvuGtvlmiDCOuv8fGNYn3cowFpLN98L8zO56U0H1PjDIyAlXymgL3Wu7u7v6hbA==
@@ -1742,6 +1742,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-radio-group@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react-radio-group/-/react-radio-group-3.0.2.tgz#4c84a2aed1965eeb5b387dc4769bd0b8c76918e4"
+  integrity sha512-b5hVFpUYYq4OVfivs0GFSzDUuRvhKyxlXAyeduCYLN6lO5nV/C56ig/TYl3PqRnB37k863o7DZ2208fZCal3ug==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-select@^3.0.14":
   version "3.0.14"
   resolved "https://registry.yarnpkg.com/@types/react-select/-/react-select-3.0.14.tgz#933d54502070eaafdef588d65b834e22814a926c"
@@ -1750,6 +1757,13 @@
     "@types/react" "*"
     "@types/react-dom" "*"
     "@types/react-transition-group" "*"
+
+"@types/react-toast-notifications@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@types/react-toast-notifications/-/react-toast-notifications-2.4.0.tgz#0ca0732cfae5a6ef5939a676fffac6e64c78bc25"
+  integrity sha512-nBI6gQ0E5gwi3IcTrVOR3oKoMGRfH1gK67kI6RIKUmiV5Sc3ZC/eymYBFt6iDo0dhlYET6kdtR0tcUh9h5L0sQ==
+  dependencies:
+    "@types/react" "*"
 
 "@types/react-transition-group@*":
   version "4.4.0"
@@ -2431,6 +2445,11 @@ atob@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+
+attr-accept@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/attr-accept/-/attr-accept-2.1.0.tgz#a231a854385d36ff7a99647bb77b33c8a5175aee"
+  integrity sha512-sLzVM3zCCmmDtDNhI0i96k6PUztkotSOXqE4kDGQt/6iDi5M+H0srjeF+QC6jN581l4X/Zq3Zu/tgcErEssavg==
 
 aws-sign2@~0.7.0:
   version "0.7.0"
@@ -4819,6 +4838,13 @@ file-entry-cache@^5.0.1:
   integrity sha512-bCg29ictuBaKUwwArK4ouCaqDgLZcysCFLmM/Yn/FDoqndh/9vNuQfXRDvTuXKLxfD/JtZQGKFT8MGcJBK644g==
   dependencies:
     flat-cache "^2.0.1"
+
+file-selector@^0.1.12:
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/file-selector/-/file-selector-0.1.12.tgz#fe726547be219a787a9dcc640575a04a032b1fd0"
+  integrity sha512-Kx7RTzxyQipHuiqyZGf+Nz4vY9R1XGxuQl/hLoJwq+J4avk/9wxxgZyHKtbyIPJmbD4A66DWGYfyykWNpcYutQ==
+  dependencies:
+    tslib "^1.9.0"
 
 file-uri-to-path@1.0.0:
   version "1.0.0"
@@ -8359,6 +8385,15 @@ react-dom@^16.13.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
+react-dropzone@^11.0.2:
+  version "11.0.2"
+  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-11.0.2.tgz#1a4084f520c2eafbeb24026760b3ee8f3759cfd3"
+  integrity sha512-/Wde9Il1aJ1FtWllg3N2taIeJh4aftx6UGUG8R1TmLnZit2RnDcEjcKwEEbKwgLXTTh8QQpiZWQJq45jTy1jCA==
+  dependencies:
+    attr-accept "^2.0.0"
+    file-selector "^0.1.12"
+    prop-types "^15.7.2"
+
 react-icons@^3.10.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.10.0.tgz#6c217a2dde2e8fa8d293210023914b123f317297"
@@ -8393,6 +8428,13 @@ react-modal@^3.11.2:
     react-lifecycles-compat "^3.0.0"
     warning "^4.0.3"
 
+react-radio-group@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/react-radio-group/-/react-radio-group-3.0.3.tgz#60bb29c7ad05d8b6f67cf443af0767ee2007cf98"
+  integrity sha512-MUNRRjZqQ2y+1K6rBuH0zO+gLVmCnWIcc5GnNwr9WNoUwZ9FUAKJ1UfsKXwYS93whR6/qrZKoVgiOltRkbzezw==
+  dependencies:
+    prop-types "^15.5.8"
+
 react-refresh@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
@@ -8410,6 +8452,14 @@ react-select@^3.1.0:
     memoize-one "^5.0.0"
     prop-types "^15.6.0"
     react-input-autosize "^2.2.2"
+    react-transition-group "^4.3.0"
+
+react-toast-notifications@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/react-toast-notifications/-/react-toast-notifications-2.4.0.tgz#6213730bd1fe158fc01aeef200687ea94c5c5b24"
+  integrity sha512-8tkrbNh7LxkiFmtqAL/AiI55efIeI+fBk3c6ImsiZ0VObb4yvOq0cqYuJHyUiv9fuD2aBxvXGVH+n4Snt8qoWA==
+  dependencies:
+    "@emotion/core" "^10.0.14"
     react-transition-group "^4.3.0"
 
 react-transition-group@^4.3.0:

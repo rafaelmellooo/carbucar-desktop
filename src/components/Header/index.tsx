@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import { remote } from 'electron'
-import { FiMinus, FiSquare, FiX } from 'react-icons/fi'
+import { FiMinus, FiX } from 'react-icons/fi'
 
 import AddProduct from '../AddProduct'
 
@@ -11,16 +11,6 @@ const Header: React.FC = () => {
     const window = remote.getCurrentWindow()
 
     window.minimize()
-  }, [])
-
-  const maximizeWindow = useCallback(() => {
-    const window = remote.getCurrentWindow()
-
-    if (window.isMaximized()) {
-      window.unmaximize()
-    } else {
-      window.maximize()
-    }
   }, [])
 
   const closeWindow = useCallback(() => {
@@ -35,9 +25,6 @@ const Header: React.FC = () => {
       <Actions>
         <Icon type="button" onClick={minimizeWindow}>
           <FiMinus />
-        </Icon>
-        <Icon type="button" onClick={maximizeWindow}>
-          <FiSquare />
         </Icon>
         <Icon type="button" onClick={closeWindow}>
           <FiX />

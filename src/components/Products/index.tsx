@@ -1,40 +1,55 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 
-import { Container } from './styles'
+import { useProducts } from '../../contexts/products'
+
+import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'
+
+import { Container, Content, GoBack, GoNext } from './styles'
 
 import Product from './Product'
 
-interface Product {
-  id: string
-  height: number
-  width: number
-  wires: number
-  format: {
-    id: number
-    name: string
-  }
-  image_url: string
-}
+const Products: React.FC = () => {
+  const { products, productsInfo, loadProducts } = useProducts()
 
-interface ProductsProps {
-  products: Product[]
-}
+  const handleGoBack = useCallback(() => {
+    loadProducts(Number(productsInfo.meta.currentPage) - 1)
+  }, [loadProducts, productsInfo.meta.currentPage])
 
-const Products: React.FC<ProductsProps> = ({ products }) => {
+  const handleGoNext = useCallback(() => {
+    console.log(Number(productsInfo.meta.currentPage) + 1)
+    loadProducts(Number(productsInfo.meta.currentPage) + 1)
+  }, [loadProducts, productsInfo.meta.currentPage])
+
   return (
     <Container>
       {
-        products.map(product => (
-          <Product
-            key={product.id}
-            id={product.id}
-            height={product.height}
-            width={product.width}
-            wires={product.wires}
-            format={product.format}
-            image_url={product.image_url}
-          />
-        ))
+        Number(productsInfo.meta.currentPage) > 1 ? (
+          <GoBack type="button" onClick={handleGoBack}>
+            <FiArrowLeft />
+          </GoBack>
+        ) : <div />
+      }
+      <Content count={Number(productsInfo.meta.itemCount)}>
+        {
+          products.map(product => (
+            <Product
+              key={product.id}
+              id={product.id}
+              height={product.height}
+              width={product.width}
+              wires={product.wires}
+              format={product.format}
+              image_url={product.image_url}
+            />
+          ))
+        }
+      </Content>
+      {
+        Number(productsInfo.meta.currentPage) === Number(productsInfo.meta.totalPages) ? <div /> : (
+          <GoNext type="button" onClick={handleGoNext}>
+            <FiArrowRight />
+          </GoNext>
+        )
       }
     </Container>
   )

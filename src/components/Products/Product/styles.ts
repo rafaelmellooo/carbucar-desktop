@@ -10,10 +10,18 @@ export const Container = styled.article`
   border: thin solid black;
 `
 
-export const Image = styled.img`
+interface ImageProps {
+  src: string
+}
+
+export const Image = styled.div<ImageProps>`
+  background-image: url(${props => props.src});
+  height: 260px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fafafa;
   width: 100%;
-  object-fit: cover;
-  object-position: center;
 `
 
 export const Title = styled.h1`
@@ -35,8 +43,6 @@ export const Text = styled.p`
   padding: 5px;
   border: thin dashed black;
   display: flex;
-  /* background-color: black;
-  color: white; */
   align-items: center;
   justify-content: center;
   text-align: center;
